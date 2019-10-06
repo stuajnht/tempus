@@ -49,15 +49,15 @@ export default ({
       <div onClick={() => format === 'percentage' ? setNumeric() : setPercentage()}>
         <div
           className={`counter-display counter-display-${format === 'percentage' ? 'main' : 'secondary'}`}>
-          {`${
-            format === 'percentage' ?
-              `${percentage}%`
-              : `${formatValue(seconds, total)}`
-            }`}
+          {percentage}%
         </div>
         <div
           className={`counter-display counter-display-${format === 'numeric' ? 'main' : 'secondary'}`}>
-          {Math.floor(total / 60)}m
+          {`${
+            typeof(seconds) === 'undefined' ?
+              `${Math.floor(total / 60)}m`
+              : `${formatValue(seconds, total)}`
+            }`}
         </div>
         <div
           className="counter-display counter-display-swap"
