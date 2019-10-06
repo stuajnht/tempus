@@ -47,24 +47,37 @@ export default ({
   return (
     <Fragment>
       <div className={`counter ${state}`} style={{ borderWidth: borderWidth + 'px' }}></div>
-      {state &&
-        <h1
-          className="percentage"
-          onClick={() => setToggleFormat(!toggleFormat)}>
+      <div onClick={() => setToggleFormat(!toggleFormat)}>
+        <div
+          className="percentage">
           {`${
             format === 'percentage' ?
               `${percentage}%`
               : `${formatValue(seconds, total)}`
             }`}
-        </h1>
-      }
-      {!state &&
-        <h1
+        </div>
+        <div
           className="percentage"
-          onClick={() => setToggleFormat(!toggleFormat)}>
+          style={{
+            top: '60%',
+            color: 'rgba(255,255,255,0.3)',
+            'font-size': '1em',
+            transition: 'all 0.5s'
+          }}>
           {Math.floor(total / 60)}m
-        </h1>
-      }
+        </div>
+        <div
+          className="percentage"
+          style={{
+            top: '60%',
+            color: 'rgba(255,255,255,0.3)',
+            'font-size': '1em',
+            transition: 'all 0.5s',
+            left: '70%'
+          }}>
+          <i className="material-icons">swap_vert</i>
+        </div>
+      </div>
       <div style={{
         position: 'absolute',
         marginLeft: toggleFormat ? '140px' : '0',
