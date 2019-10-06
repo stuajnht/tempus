@@ -41,6 +41,14 @@ export default ({
     })
   }
 
+  function calculateSwapIconSpacing() {
+    let secondaryTextWidth = 0
+    if (typeof(document.getElementsByClassName("counter-display-secondary")[0]) !== "undefined") {
+      secondaryTextWidth = document.getElementsByClassName("counter-display-secondary")[0].clientWidth
+    }
+    return ((window.innerWidth / 2) + (secondaryTextWidth / 2)) + 40
+  }
+
   const borderWidth = (percentage * 2.78) + 56 // 334px to fill (2.78 + 0.56)
 
   return (
@@ -62,7 +70,7 @@ export default ({
         <div
           className="counter-display counter-display-swap"
           style={{
-            left: '70%'
+            left: `${calculateSwapIconSpacing()}px`
           }}>
           <i className="material-icons">swap_vert</i>
         </div>
