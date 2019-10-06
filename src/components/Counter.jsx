@@ -49,7 +49,7 @@ export default ({
       <div className={`counter ${state}`} style={{ borderWidth: borderWidth + 'px' }}></div>
       <div onClick={() => setToggleFormat(!toggleFormat)}>
         <div
-          className="percentage">
+          className={`counter-display counter-display-${format === 'percentage' ? 'main' : 'secondary'}`}>
           {`${
             format === 'percentage' ?
               `${percentage}%`
@@ -57,22 +57,12 @@ export default ({
             }`}
         </div>
         <div
-          className="percentage"
-          style={{
-            top: '60%',
-            color: 'rgba(255,255,255,0.3)',
-            'font-size': '1em',
-            transition: 'all 0.5s'
-          }}>
+          className={`counter-display counter-display-${format === 'numeric' ? 'main' : 'secondary'}`}>
           {Math.floor(total / 60)}m
         </div>
         <div
-          className="percentage"
+          className="counter-display counter-display-swap"
           style={{
-            top: '60%',
-            color: 'rgba(255,255,255,0.3)',
-            'font-size': '1em',
-            transition: 'all 0.5s',
             left: '70%'
           }}>
           <i className="material-icons">swap_vert</i>
