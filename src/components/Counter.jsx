@@ -70,7 +70,8 @@ export default ({
         <div
           className="counter-display counter-display-swap"
           style={{
-            left: `${calculateSwapIconSpacing()}px`
+            left: `${calculateSwapIconSpacing()}px`,
+            transition: 'left 0.5s'
           }}>
           <i className="material-icons">swap_vert</i>
         </div>
