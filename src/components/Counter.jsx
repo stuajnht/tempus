@@ -6,7 +6,6 @@ export default ({
   totalPause, countPause
 }) => {
   const [format, setFormat] = useState('percentage')
-  const [toggleFormat, setToggleFormat] = useState(false)
 
   useEffect(() => {
     window.ipcRenderer.send('getCounterData')
@@ -47,7 +46,7 @@ export default ({
   return (
     <Fragment>
       <div className={`counter ${state}`} style={{ borderWidth: borderWidth + 'px' }}></div>
-      <div onClick={() => setToggleFormat(!toggleFormat)}>
+      <div onClick={() => format === 'percentage' ? setNumeric() : setPercentage()}>
         <div
           className={`counter-display counter-display-${format === 'percentage' ? 'main' : 'secondary'}`}>
           {`${
@@ -67,35 +66,6 @@ export default ({
           }}>
           <i className="material-icons">swap_vert</i>
         </div>
-      </div>
-      <div style={{
-        position: 'absolute',
-        marginLeft: toggleFormat ? '140px' : '0',
-        opacity: toggleFormat ? '1' : '0',
-        zIndex: '2',
-        marginTop: '10px',
-        transition: 'transform 0.3s, opacity 0.3s, margin-left 0.3s'
-      }}>
-        <p
-          className={`sub-action ${format === 'percentage' ? 'active' : null}`}
-          onClick={() => toggleFormat ? setPercentage() : null}
-          style={{
-            padding: '8px',
-            width: '32px',
-            textAlign: 'center'
-          }}>
-          %
-        </p>
-        <p
-          className={`sub-action ${format === 'numeric' ? 'active' : null}`}
-          onClick={() => toggleFormat ? setNumeric() : null}
-          style={{
-            padding: '8px',
-            width: '32px',
-            textAlign: 'center'
-          }}>
-          num
-        </p>
       </div>
     </Fragment>
   )
