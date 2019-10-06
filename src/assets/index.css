@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, h6, p {
 .counter-display-swap {
   top: 60%;
   font-size: 1em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .counter-display-swap:hover {
