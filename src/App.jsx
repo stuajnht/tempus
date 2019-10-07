@@ -379,7 +379,7 @@ class App extends Component {
   render() {
     if (this.state.finishedWelcome) {
       return (
-        <div className="container">
+        <div className={`container window-${this.state.windowStyle}`}>
           <div
             className={`titlebar ${
               this.state.allowDrag ? 'is-draggable' : null
@@ -407,10 +407,14 @@ class App extends Component {
                 className="material-icons">
                 remove
               </i>
-              <i onClick={this.winRestore} className="material-icons">
+              <i
+                onClick={this.winRestore}
+                className="material-icons remove-on-restored">
                 call_made
               </i>
-              <i onClick={this.winCompact} className="material-icons">
+              <i
+                onClick={this.winCompact}
+                className="material-icons remove-on-compacted">
                 call_received
               </i>
               <i onClick={this.quit} className="material-icons danger">
