@@ -697,10 +697,20 @@ button.pausing {
   display: none;
 }
 
+.window-compacted .counter {
+  bottom: initial;
+  top: calc(50% + 6px);
+  transform: translateY(-50%);
+}
+
 .window-compacted footer {
-  height: 50%;
+  height: 100%;
 }
 
 .window-compacted .footer-header {
   background-color: transparent;
+}
+
+.window-compacted .footer-header .overlap {
+  top: 50%;
 }
