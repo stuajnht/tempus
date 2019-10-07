@@ -707,6 +707,18 @@ button.pausing {
   transform: translateY(-50%);
 }
 
+.window-compacted .counter-display-main {
+  left: 22%;
+  top: 54%;
+  font-size: 1em;
+}
+
+.window-compacted .counter-display-secondary {
+  left: 78%;
+  top: 56%;
+  font-size: 0.8em;
+}
+
 .window-compacted footer {
   height: 100%;
 }
