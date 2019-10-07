@@ -385,7 +385,7 @@ class App extends Component {
               this.state.allowDrag ? 'is-draggable' : null
             }`}>
             <div
-              className={`streak ${
+              className={`streak hidden-on-compacted ${
                 this.state.sessionStreak > 0 ? 'in-a-row' : ''
               }`}>
               <p>
@@ -399,7 +399,7 @@ class App extends Component {
             <div className="controls">
               <i
                 onClick={() => window.ipcRenderer.send('win-settings')}
-                className="material-icons">
+                className="material-icons hidden-on-compacted">
                 settings
               </i>
               <i
@@ -427,7 +427,7 @@ class App extends Component {
 
           <h6
             onClick={this.workTillNearestHour}
-            className={`sub-action ${this.state.state}`}
+            className={`sub-action hidden-on-compacted ${this.state.state}`}
             style={{ marginTop: '300px' }}>
             Or work till {this.state.nextHour}.
           </h6>

@@ -69,16 +69,6 @@ body {
   align-items: center;
 }
 
-.window-compacted .hidden-on-compacted,
-.window-restored .hidden-on-restored {
-  visibility: hidden;
-}
-
-.window-compacted .remove-on-compacted,
-.window-restored .remove-on-restored {
-  display: none;
-}
-
 /**
  *
  * TYPOGRAPHY
@@ -695,4 +685,22 @@ button.pausing {
 
 .hide {
   display: none !important;
+}
+
+.window-compacted .hidden-on-compacted,
+.window-restored .hidden-on-restored {
+  visibility: hidden;
+}
+
+.window-compacted .remove-on-compacted,
+.window-restored .remove-on-restored {
+  display: none;
+}
+
+.window-compacted footer {
+  height: 50%;
+}
+
+.window-compacted .footer-header {
+  background-color: transparent;
 }
