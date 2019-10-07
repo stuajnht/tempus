@@ -697,6 +697,10 @@ button.pausing {
   display: none;
 }
 
+.window-compacted .titlebar {
+  z-index: 5;
+}
+
 .window-compacted .counter {
   bottom: initial;
   top: calc(50% + 6px);
