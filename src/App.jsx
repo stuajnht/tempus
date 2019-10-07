@@ -23,7 +23,8 @@ class App extends Component {
       oldCycle: null // Old value for cycle
     },
     finishedWelcome: false,
-    allowDrag: false
+    allowDrag: false,
+    windowStyle: 'restored' // Can be 'compacted' or 'restored'
   }
 
   componentDidMount() {
@@ -345,6 +346,23 @@ class App extends Component {
   }
 
   /**
+   *  Set the style of the window
+   */
+  winCompact = () => {
+    window.ipcRenderer.send('win-compact')
+    this.setState({
+      windowStyle: 'compacted'
+    })
+  }
+
+  winRestore = () => {
+    window.ipcRenderer.send('win-restore')
+    this.setState({
+      windowStyle: 'restored'
+    })
+  }
+
+  /**
    *  Show a confirmation dialog before quit the app
    */
   quit = () => {
@@ -389,14 +407,10 @@ class App extends Component {
                 className="material-icons">
                 remove
               </i>
-              <i
-                onClick={() => window.ipcRenderer.send('win-restore')}
-                className="material-icons">
+              <i onClick={this.winRestore} className="material-icons">
                 call_made
               </i>
-              <i
-                onClick={() => window.ipcRenderer.send('win-compact')}
-                className="material-icons">
+              <i onClick={this.winCompact} className="material-icons">
                 call_received
               </i>
               <i onClick={this.quit} className="material-icons danger">
