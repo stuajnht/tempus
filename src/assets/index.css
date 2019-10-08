@@ -687,6 +687,12 @@ button.pausing {
   display: none !important;
 }
 
+/**
+ *
+ * WINDOW STYLES
+ *
+ */
+
 .window-compacted .hidden-on-compacted,
 .window-restored .hidden-on-restored {
   visibility: hidden;
