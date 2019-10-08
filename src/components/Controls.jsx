@@ -70,7 +70,9 @@ export default ({
       <div className="footer-header">
         <button
           onClick={() => switchComponent('Statistics')}
-          className={`hidden-on-compacted ${component === 'Statistics' ? 'active' : ''}`}>
+          className={`hidden-on-compacted ${
+            component === 'Statistics' ? 'active' : ''
+          }`}>
           <i className="material-icons">
             {component !== 'Statistics' ? 'bar_chart' : 'close'}
           </i>
@@ -84,7 +86,9 @@ export default ({
 
         <button
           onClick={() => switchComponent('EditTimer')}
-          className={`hidden-on-compacted ${component === 'EditTimer' ? 'active' : ''}`}>
+          className={`hidden-on-compacted ${
+            component === 'EditTimer' ? 'active' : ''
+          }`}>
           <i className="material-icons">
             {component !== 'EditTimer' ? 'timer' : 'close'}
           </i>

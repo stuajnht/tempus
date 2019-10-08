@@ -1,6 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react'
 
-export default ({ state, total, count, totalPause, countPause, windowStyle }) => {
+export default ({
+  state,
+  total,
+  count,
+  totalPause,
+  countPause,
+  windowStyle
+}) => {
   const [format, setFormat] = useState('percentage')
 
   useEffect(() => {
@@ -61,7 +68,9 @@ export default ({ state, total, count, totalPause, countPause, windowStyle }) =>
     <Fragment>
       <div
         className={`counter ${state}`}
-        style={{ borderWidth: borderWidth(percentage, windowStyle) + 'px' }}></div>
+        style={{
+          borderWidth: borderWidth(percentage, windowStyle) + 'px'
+        }}></div>
       <div
         onClick={() =>
           format === 'percentage' ? setNumeric() : setPercentage()
