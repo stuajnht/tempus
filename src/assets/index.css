@@ -724,7 +724,8 @@ button.pausing {
 }
 
 .window-compacted footer {
-  height: 100%;
+  height: 0%;
+  transition: height 0s;
 }
 
 .window-compacted .footer-header {
@@ -732,5 +733,5 @@ button.pausing {
 }
 
 .window-compacted .footer-header .overlap {
-  top: 50%;
+  top: -72px;
 }
