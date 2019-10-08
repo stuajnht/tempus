@@ -83,7 +83,7 @@ export default ({ state, total, count, totalPause, countPause, windowStyle }) =>
           }`}
         </div>
         <div
-          className="counter-display counter-display-swap"
+          className="counter-display counter-display-swap hidden-on-compacted"
           style={{
             left: `${calculateSwapIconSpacing()}px`,
             transition: 'left 0.5s'
